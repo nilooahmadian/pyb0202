@@ -23,12 +23,38 @@ package cisc191.sdmesa.edu;
 
 // TODO: Implement and comment all IS-A (inheritance) and IS (implements) relationships separately
 
-public class ElectricMountainBike extends Bicycle
+public class ElectricMountainBike extends Bicycle implements Gearable, Electric
 {
-
+	private int gearNumber;
+	private int chargeAmount;
+	
 	public ElectricMountainBike(String newMake) {
 		super(newMake);
+		this.gearNumber = 1;
 		
 	}
-	// TODO: Implement and comment HAS-A relationships separately
+
+	@Override
+	public int getGear() {
+		return this.gearNumber;
+	}
+	
+	public void gearUp() {
+		gearNumber++;
+	}
+	
+	public void gearDown() {
+		gearNumber--;
+	}
+	
+	@Override
+	public int getCharge() {
+		return this.chargeAmount;
+	}
+	
+	@Override
+	public void charge(int chargeAmount) {
+		 this.chargeAmount = chargeAmount;
+	}
+	
 }

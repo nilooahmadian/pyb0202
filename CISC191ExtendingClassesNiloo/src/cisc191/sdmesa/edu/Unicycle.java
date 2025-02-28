@@ -46,4 +46,10 @@ public class Unicycle extends Cycle {
 	public void setColor(Color newColor) {
 		this.color = newColor;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Hello, I'm a Unicycle" + super.toString() ;
+	}
 }

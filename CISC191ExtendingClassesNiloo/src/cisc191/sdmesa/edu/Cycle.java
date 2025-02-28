@@ -39,6 +39,7 @@ public abstract class Cycle
 	// How are you going to make it immutable, so that it only gets one final number? 
 	// (Hint: did you see the hint?)
 	private int frameNumber = 1;
+	private int actualFrameNumber;
 	
 	// A cycle has a make, that is immutable
 	// TODO:
@@ -47,6 +48,12 @@ public abstract class Cycle
 	{
 		// TODO
 		this.make = newMake;
+		
+		//assign the frame number
+		this.actualFrameNumber = frameNumber;
+		
+		//update frame number 
+		frameNumber++;
 		
 		
 	}
@@ -83,7 +90,7 @@ public abstract class Cycle
 	 */
 	public int getFrameNumber()
 	{
-		return -1;
+		return this.actualFrameNumber;
 	}
 	
 	/**
@@ -97,7 +104,7 @@ public abstract class Cycle
 		if (!(other instanceof Cycle ))
 			return false;
 		
-		return this.frameNumber == ((Cycle) other).frameNumber;
+		return this.actualFrameNumber == ((Cycle) other).actualFrameNumber;
 	}
 	
 	/**
@@ -107,7 +114,7 @@ public abstract class Cycle
 	public String toString()
 	{
 		//TODO:
-		return "Hello, I'm a Cycle";
+		return "Hello, I'm a Cycle" + make + actualFrameNumber + color;
 	}
 
 }

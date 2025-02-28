@@ -47,5 +47,12 @@ public class Bicycle extends Cycle
 	public void setColor(Color newColor) {
 		this.color = newColor;
 	}
+	
+	@Override
+	public String toString()
+	{
+		return "Hello, I'm a Bicycle" + super.toString() ;
+	}
 
+	
 }
